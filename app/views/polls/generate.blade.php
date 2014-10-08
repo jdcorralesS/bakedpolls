@@ -5,6 +5,21 @@
 	{{HTML::style('packages/js/jquery-ui/themes/base/jquery.ui.all.css')}}	
 @stop
 
+<style type="text/css">
+	#polls-generate { 
+		height: 80%; 
+		overflow-y: auto; 		
+		overflow-x: hidden;
+	}		
+	.portlet-placeholder { 
+		border: 1px dotted black; 
+		line-height: 2.2em; 
+		margin: 0 1em 1em 0; 
+		height: 2.5em; 
+		width: 90%;
+	}
+</style>
+
 @section('body')
 	<div class="container">
 		<div class="row">
@@ -13,16 +28,7 @@
 					<div class="form-group">
 						<legend>Form title</legend>
 					</div>					
-					<div id='polls-generate'>
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-						      	<div class="checkbox">
-						        	<label>
-						          		<input type="checkbox"> Remember me
-						        	</label>
-						    	</div>
-							</div>
-						</div>				
+					<div id='polls-generate'>						
 					</div>
 					<div class="form-group">
 						<div class="col-sm-10 col-sm-offset-2">
@@ -96,12 +102,13 @@
 						</div>
 					</div>
 				</div>
+				<div id="delete"> Deleted</div>
 			</div>		
 		</div>
 	</div>
 @stop
 @section('js')							
-	{{HTML::script('packages/js/jquery-ui/jquery-1.10.2.js')}}
+	@parent	
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.core.js')}}
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.widget.js')}}
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.mouse.js')}}

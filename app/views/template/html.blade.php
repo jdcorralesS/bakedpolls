@@ -34,7 +34,7 @@
 
 		@section('js')						
 			<!-- jQuery -->
-			{{HTML::script('packages/js/bootstrap-3/bower_components/jquery/dist/jquery.js')}}
+			{{HTML::script('packages/js/jquery-ui/jquery-1.10.2.js')}}
 			<!-- Bootstrap JavaScript -->
 			{{HTML::script('packages/js/bootstrap-3/bower_components/bootstrap/dist/js/bootstrap.js')}}
 		@show

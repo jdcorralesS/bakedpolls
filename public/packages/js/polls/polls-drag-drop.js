@@ -1,24 +1,35 @@
 $(document).ready(function(){
 	
+	var removeIntent = false; 
+
 	$(".collapse .form-group").draggable({
-			cursor: 'move',
-			appendTo: "body",
-			helper: "clone"
-	});
+		connectToSortable: "#polls-generate",		
+        helper: "clone"        
+	});	
 
-	$( "#polls-generate" ).droppable({		
-		activeClass: "ui-state-default",
-		hoverClass: "ui-state-hover",	
-		accept: ":not(.ui-sortable-helper)",	
-		drop: function( event, ui ) {			
-			$(this).append($(ui.draggable).clone());
-		}
-	}).sortable({		
-		sort: function() {			
-			connectWith : '#polls-generate .form-group',
-			$( this ).removeClass( "ui-state-default" );
-		}
-	});
+	$( "#polls-generate" ).sortable({
+        revert: true,
+        placeholder: "portlet-placeholder ui-corner-all",                
+        over: function () {
+            removeIntent = false;
+        },
+        out: function () {
+            removeIntent = true;
+        },
+        beforeStop: function (event, ui) {
+            if(removeIntent == true){
+                //ui.item.remove();   
+            }
+        }
+    });
 
-	$("#polls-generate").sortable();
+    $('#delete').droppable({
+        over: function(event, ui) {                      
+            if($(ui.draggable).hasClass("ui-sortable-helper")){
+            	$(ui.draggable).remove();
+            }
+        }
+    });
+
+    
 })
