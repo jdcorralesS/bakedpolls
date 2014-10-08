@@ -1,0 +1,7 @@
+
+[submodule "public/packages/js/bootstrap-3"]
+	path = public/packages/js/bootstrap-3
+	url = git@github.com:jdcorrales/bootstrap.git
+[submodule "public/packages/js/jquery-ui"]
+	path = public/packages/js/jquery-ui
+	url = git@github.com:jdcorrales/jquery-ui.git

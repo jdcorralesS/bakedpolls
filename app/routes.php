@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('hello');
+});*/
+
+Route::get('/', function()
+{
+	return View::make('polls.generate');
 });
 
-Route::get('foo', function()
+Route::get('template', function()
 {
-    return 'Hello World';
+	return View::make('template.html');
 });
