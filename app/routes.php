@@ -21,7 +21,13 @@ Route::get('/', function()
 	return View::make('polls.generate');
 });
 
-Route::get('template', function()
+Route::get('generate_options/{class}', function($class){
+	$data["class"] = $class;
+	return View::make('polls.generate_options',$data);
+});
+
+Route::get('template', function($class)
 {
+	
 	return View::make('template.html');
 });

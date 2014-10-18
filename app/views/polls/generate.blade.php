@@ -1,11 +1,15 @@
 @extends('template.html')
 
-@section('js')							
+@section('css')							
 	@parent
-	{{HTML::style('packages/js/jquery-ui/themes/base/jquery.ui.all.css')}}	
+	{{HTML::style('packages/js/jquery-ui/themes/base/jquery.ui.all.css')}}
+	{{HTML::style('packages/js/highslide/highslide/highslide.css')}}
 @stop
 
 <style type="text/css">
+	body{
+		overflow: hidden;
+	}
 	#polls-generate { 
 		height: 80%; 
 		overflow-y: auto; 		
@@ -18,6 +22,13 @@
 		height: 2.5em; 
 		width: 90%;
 	}
+	.ui-draggable:hover,
+	.ui-draggable > label:hover{
+		cursor: move;
+	}
+	.highslide{
+		cursor: pointer;
+	}
 </style>
 
 @section('body')
@@ -26,7 +37,7 @@
 			<div class="col-md-7" style="border-right: solid 1px black;">
 				<form method="POST" class="form-horizontal" role="form">
 					<div class="form-group">
-						<legend>Form title</legend>
+						<legend>Form title</lcssend>
 					</div>					
 					<div id='polls-generate'>						
 					</div>
@@ -83,7 +94,7 @@
 				    	</div>
 					    <div id="collapseTwo" class="panel-collapse collapse">
 						    <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        <div class='highslide' url="http://bakedpolls.dev/" width="700" height="500">Hola mundo</div>
 						    </div>
 						</div>
 					</div>
@@ -97,12 +108,14 @@
 						</div>
 						<div id="collapseThree" class="panel-collapse collapse">
 					    	<div class="panel-body">
-				    			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+				    			
 				    		</div>
 						</div>
 					</div>
-				</div>
-				<div id="delete"> Deleted</div>
+				</div>				
+				<div id="delete">
+					<span class="glyphicon glyphicon-trash" style="font-size: 5em;"></span>					
+				</div>				
 			</div>		
 		</div>
 	</div>
@@ -115,5 +128,7 @@
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.draggable.js')}}
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.droppable.js')}}
 	{{HTML::script('packages/js/jquery-ui/ui/jquery.ui.sortable.js')}}
+	{{HTML::script('packages/js/highslide/highslide/highslide-full.js')}}
+	{{HTML::script('packages/js/highslide/highslide/highslide-with-gallery.js')}}	
 	{{HTML::script('packages/js/polls/polls-drag-drop.js')}}
 @stop

@@ -33,8 +33,8 @@
 		@show
 
 		@section('js')						
-			<!-- jQuery -->
-			{{HTML::script('packages/js/jquery-ui/jquery-1.10.2.js')}}
+			<!-- jQuery -->			
+			{{HTML::script('packages/js/jquery-ui/tests/jquery-1.7.2.js')}}
 			<!-- Bootstrap JavaScript -->
 			{{HTML::script('packages/js/bootstrap-3/bower_components/bootstrap/dist/js/bootstrap.js')}}
 		@show
